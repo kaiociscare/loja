@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recanto-Doces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 15px 0;
+            border-bottom: 4px solid #0066cc; 
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .logo { 
+            width: 150px;
+            float: left;
+        }
+
+        nav {
+            float: right;
+            margin-top: 25px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; 
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: #003366;
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+
+        .quantity {
+            margin-top: 15px;
+        }
+
+        .quantity-btn {
+            background-color: #0066cc;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1.2em;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background-color: #004d99;
+        }
+
+        .quantity-input {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            width: 60px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .checkout {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .checkout button {
+            background-color: #003366;
+            border: none;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout button:hover {
+            background-color: #002244;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1DA851;
+        }
+
+        footer {
+            background-color: #003366;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 4px solid #0066cc;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-code img {
+            max-width: 200px; 
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="th.jpg" alt="Logo da Loja" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#pagamento">Pagamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+
+            <div class="product" data-price="14.00">
+                <img src="https://cdn.shoppub.io/cdn-cgi/image/w=600,h=600,q=80,f=auto/pereirao/media/uploads/produtos/foto/b76fcec30261cfile.png" alt="Salgadinho Tofitos">
+                <h3>Salgadinho Tofitos Cebola e Salça C/10 Unidades (45g)</h3>
+                <p>Salgadinho Tofitos Sabor Cebola e Salça e muito crocantes.</p>
+                <p class="price">R$ 14,00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                    <input type="text" class="quantity-input" value="0" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+            </div>
+
+            <div class="product" data-price="14.00">
+                <img src="https://d246rzh6rlbt6w.cloudfront.net/img.produtos/7898299931357/689/img_1200_1.png" alt="Salgadinho Tofitos">
+                <h3>Salgadinho Tofitos Sabor Bacon C/10 Unidades (45g)</h3>
+                <p>Salgadinho Tofitos Sabor Bacon e muito crocantes.</p>
+                <p class="price">R$ 14,00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                    <input type="text" class="quantity-input" value="0" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+            </div>
+
+            <div class="product" data-price="18.00">
+                <img src="https://www.saodomingosalimentos.com.br/v2/wp-content/uploads/2020/03/Diversos_Tofitos2.jpg" alt="Salgadinho Tofitos">
+                <h3>Salgadinho Tofitos Sabor Bacon C/10 Unidades (70g)</h3>
+                <p>Salgadinho Tofitos Sabor Bacon e muito crocantes.</p>
+                <p class="price">R$ 18,00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                    <input type="text" class="quantity-input" value="0" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+            </div>
+
+            <div class="product" data-price="27.00">
+                <img src="https://img.sitemercado.com.br/produtos/ec6cd0e5f3e08caa8a098ad08a000947183752e7e2ec85d0e4f8cda9f06546c9_full.jpg" alt="Salgadinho Tofitos">
+                <h3>Salgadinho Tofitos Sabor Bacon C/10 Unidades (150g)</h3>
+                <p>Salgadinho Tofitos Sabor Bacon e muito crocantes.</p>
+                <p class="price">R$ 27,00</p>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="updateQuantity(this, -1)">-</button>
+                    <input type="text" class="quantity-input" value="0" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+            </div>
+            <div class="checkout">
+                <button onclick="calculateTotal()">Finalizar Compra</button>
+                <p id="totalPrice">Total: R$ 0,00</p>
+                <a id="whatsappButton" href="#" class="whatsapp-button" target="_blank" style="display: none;">Enviar Pedido pelo WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Para mais informações, entre em contato conosco!</p>
+            <p>Envie uma mensagem pelo WhatsApp para o número <strong>(16) 99164-9228</strong> para obter mais informações ou para fazer um pedido.</p>
+            <p> <a href="https://wa.me/5516994073634?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20seus%20produtos." target="_blank" class="whatsapp-button">Clique aqui para enviar uma mensagem pelo WhatsApp</a></p>
+        </div>
+    </section>
+
+    <section id="pagamento">
+        <div class="container">
+            <h2>Pagamento</h2>
+            <p>Pix: (16) 991649228</p>
+            <p>Nome: Giovana Ciscare Farina</p>
+            <p>Banco: Bradesco</p>
+            <div class="qr-code">
+                <p>Para pagar via Pix, escaneie o QR Code abaixo:</p>
+                <img src="qr-code samtr.png" alt="QR Code do Pagamento">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Recanto-Doces. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateQuantity(button, change) {
+            var input = button.parentElement.querySelector('.quantity-input');
+            var currentValue = parseInt(input.value);
+            var newValue = currentValue + change;
+            if (newValue >= 0) {
+                input.value = newValue;
+            }
+        }
+
+        function calculateTotal() {
+            var products = document.querySelectorAll('.product');
+            var total = 0;
+            var orderDetails = "Pedido:\n";
+
+            products.forEach(function(product) {
+                var price = parseFloat(product.getAttribute('data-price'));
+                var quantity = parseInt(product.querySelector('.quantity-input').value);
+                if (quantity > 0) {
+                    total += price * quantity;
+                    orderDetails += product.querySelector('h3').innerText + " - Quantidade: " + quantity + " - Preço: R$ " + (price * quantity).toFixed(2) + "\n";
+                }
+            });
+
+            document.getElementById('totalPrice').innerText = 'Total: R$ ' + total.toFixed(2);
+
+            var whatsappMessage = encodeURIComponent(orderDetails + "Total: R$ " + total.toFixed(2));
+            var whatsappLink = "https://wa.me/5516994073634?text=" + whatsappMessage;
+            var whatsappButton = document.getElementById('whatsappButton');
+            whatsappButton.href = whatsappLink;
+            whatsappButton.style.display = 'inline'; 
+        }
+    </script>
+</body>
+</html>
